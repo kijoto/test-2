@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form>
+            Username:<input type="text" name="username" id="input-username"><br>
+            Password:<input type="password" name="password"  id="input-password"><br>
+                     <input type="submit"  id="input-submit" onclick="funzia">
+        </form>
+        <script>  
+        /*/ Prelevare username e password e verificare la loro
+        correttezza
+        Cioe: esiste un account il cui username è "pippo" e 
+        la cui password è "pippo2"?/*/  
+        const username_obj = document.getElementById('input-username'); 
+          /*/assegnamo alla costante username_obj la classe document con il metodo                                                           
+          getElementById che prende come attributo la stringa input-username restituendo un oggetto/*/                                                                                                                              
+        const password_obj = document.getElementById('input-password');
+        const submit_obj = document.getElementById('input-submit');
+        submit_obj.addEventListener('click',function(e){  
+            /*/questa classe attende che si verifichi un evento specifico, in questo caso
+               attende il click sulla costante 
+               submit_obj/*/
+               e.preventDefault(); //l'azione predefinita che appartiene all'evento non si verificherà
+               var username_value= username_obj.value; //preleva il lavore della input text 'input-username'
+               var password_value= password_obj.value; //preleva il lavore della input text 'input-password'
+               console.log(username_value); //stampo sulla console il valore di username_value
+               console.log(password_value); //stampo sulla console il valore di password_value
+               funzia(username_value,password_value); //richiamo la funzione funzia
+        });
+        function funzia(username_value, password_value){ /*/conseguenze della correttezza delle informazioni                                                          
+                                                            inserite/*/
+            if(username_value=="pippo"){                   
+                    alert("username corretto");
+                }
+                else{
+                    alert("username errato");
+                }
+               if(password_value=="pippo2"){
+                    alert("password corretta");
+                }
+                else{
+                    alert("password errata");
+                }
+        }
+        //si mette <script>in fondo al body per far rendirizzare tutti gli elementi per usarli 
+        </script>
+    </body>
+</html>

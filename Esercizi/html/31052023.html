@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <input type="text" name="username" id="usernamei">
+        <input type="password" name="password" id="passwordi">
+        <input type="submit" id="submiti" >
+    </form>
+    <script>
+        const username_obj = document.getElementById('usernamei');
+        const password_obj = document.getElementById('passwordi');
+        const submit_obj = document.getElementById('submiti');
+
+        submit_obj.addEventListener('click', function(e) {
+            e.preventDefault();
+            //preleva username password e verifica la correttezza
+            var username_value = username_obj.value;
+            var password_value = password_obj.value;
+            console.log("username: "+username_value);
+            console.log("password "+password_value);
+            funzia(username_value, password_value);
+        });
+
+        function funzia(username_value, password_value) {
+           if(username_value == "pippo" && password_value == "pippo") {
+            alert("bravo pippo");
+            }
+            else if(username_value == "pippo" ) {
+                alert("hai sbagliato la password :/");
+            }  
+            else {
+                alert("non esiste un utente con questo nome");
+            }
+        }
+        //preleva username e password e verifica la correttezza
+        //se esiste un account di nome "pippo" e la password è "pippo"
+
+        /*1. cosa è un prevent default e perchè
+        metodi querySelectorAll e querySelector */
+
+    </script>
+</body>
+</html>
